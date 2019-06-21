@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>The Memory Game</title>
+    <meta name="description" content="Memory Game" />
+    <meta name="author" content="Frosina Marinoska" />
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Fira+Sans+Extra+Condensed:300i,400,600,600i,700&display=swap&subset=cyrillic" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css?v=1.0" />
+    
+    <script src="http://mrdoob.github.com/three.js/build/three.min.js"></script>
+    <script src="https://connect.soundcloud.com/sdk/sdk-3.3.2.js"></script>
+    <script src="external/jquery-3.4.1.min.js"></script>
+    <script src="external/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <link href="external/jquery-ui-1.12.1.custom/jquery-ui.min.css" rel="stylesheet">
+  </head>
+
+
+  <body>
+    <div hidden id="hidd-memo">
+    
+      <header>
+        <div class="title">
+          <div class="main-title"><h1>Мемориска игра</h1></br></div>
+          <div class="sub-title"><h3>Колекција на носии од кореографијата „ Драчевка “ </h3></div>
+        </div>
+      </header>
+
+      <section>
+        <div id="main-container">
+          <div id="view"></div>
+        </div>
+
+        <div class="sub-container">
+          <div class="timer">
+            <img src="image/icon3.svg" width="42" height="42"><span id="counter">0</span>
+          </div>
+          <div class="clicks">
+            <img src="image/icon1.svg" width="42" height="42"><span id="clicks">0</span>
+          </div>
+          <div class="score">
+            <img src="image/icon2.svg" width="42" height="42"><span id="score">0</span>
+          </div>          
+        </div>
+      </section>
+
+      <section id="music">
+        <button id="refresh" onclick="newGame()">Нова игра</button><br/>      
+        <h2 style="margin-top: 30px">Датотека на македонска народна музика</h2>
+        <br/>
+          <div class="ui-widget">
+            <input id="input">
+            <button id="search" onclick="search()">пребарај</button>
+          </div>      
+          <div id="soundcloud"></div>
+      </section>  
+    </div>
+
+    <div show id="show-memo">
+      <section class="description">
+        <h3 class="description-title">Опис на играта</h3>
+        <p>Оваа мемориска игра е дел од завршниот проект по предметот Java Script. Истата има едукативен карактер и ќе ја наменам за 
+              промоција на културното наследство со кое располага Националната Установа „Танец“. Во овој сегмент ќе прикажам дел од 
+              македонските народни носии од Горновардарската етнографска целина кои се имплементирани во кореографиите на Н.У. „ Танец “. 
+              Како прилог на галеријата на носии која е прикажана во оваа игра, ќе биде овозможено и слушање на музика од истата етнографска целина.
+        </p>
+      </section>
+    <button id="play" onclick="newGame()">Започни</button>
+    </div>
+
+
+    <div hidden id="show-success">
+      <section class="description">
+        <h3 class="description-title">Браво! Браво! Браво! </h3> 
+        <p> Одлично одигра! Во прилог ги имате информациите за кореографијата „ Драчевка “.
+          <br><br>Кореографска обработка од Атанас Коларовски, музика од Трајко Прокопиев
+        </br>Оваа кореографија е дел од ората од Северно играорно подрачје а е инспирирано од Скопскиот регион, Скопска Блатија и Скопска Црна гора и се 
+        изведува во носии од истиот крај. Во орото покрај динамичноста се 
+          претставени останати драмски елементи како веселбата и радоста на средселскиот собор од овој крај. </p>     
+      </section>
+      <button id="new-game" onclick="newGame()">Нова игра</button>
+    </div>
+
+    <script src="js/memory.js"></script>
+    <script src="js/music.js"></script>
+  </body>
+</html>
